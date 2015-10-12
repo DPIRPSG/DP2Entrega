@@ -20,7 +20,6 @@ public class Consumer extends Actor {
 	public Collection<Item> getItem() {
 		return item;
 	}
-
 	public void setItem(Collection<Item> item) {
 		this.item = item;
 	}
@@ -29,15 +28,12 @@ public class Consumer extends Actor {
 	public Collection<Order> getOrder() {
 		return order;
 	}
-
 	public void setOrder(Collection<Order> order) {
 		this.order = order;
 	}
-
 	public boolean add(Order e) {
 		return order.add(e);
 	}
-
 	public boolean remove(Object o) {
 		return order.remove(o);
 	}

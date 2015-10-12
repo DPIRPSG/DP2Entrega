@@ -8,8 +8,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 @Entity
 @Access(AccessType.PROPERTY)
 public class Addition extends DomainEntity{
