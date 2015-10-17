@@ -7,9 +7,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Message extends DomainEntity{
 	public String subject;
@@ -43,7 +43,7 @@ public class Message extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToOne(optional = false, mappedBy = "sent")
+	@ManyToOne(optional = false)
 	public Actor getSender() {
 		return sender;
 	}
@@ -53,7 +53,7 @@ public class Message extends DomainEntity{
 	
 	@Valid
 	@ManyToMany(mappedBy = "received")
-	@Size(min = 1)
+	@NotEmpty
 	public Collection<Actor> getRecipient() {
 		return recipient;
 	}
