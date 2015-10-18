@@ -13,9 +13,9 @@ import org.hibernate.validator.constraints.URL;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Category extends DomainEntity{
-	public String name;
-	public String description;
-	public String picture;
+	private String name;
+	private String description;
+	private String picture;
 	private Tax tax;
 	
 	@NotBlank

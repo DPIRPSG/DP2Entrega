@@ -14,8 +14,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class WareHouse extends DomainEntity{
 
-	public String name;
-	public String address;
+	private String name;
+	private String address;
 	private Collection<Storage> storage;
 	
 	@NotBlank

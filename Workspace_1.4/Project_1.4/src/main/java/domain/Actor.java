@@ -20,10 +20,10 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public abstract class Actor extends DomainEntity{
 
-	public String name;
-	public String surname;
-	public String email;
-	public String[] phone;
+	private String name;
+	private String surname;
+	private String email;
+	private String[] phone;
 	private Collection<Folder> folder;
 	private Collection<Message> sent;
 	private Collection<Message> received;
@@ -62,9 +62,9 @@ public abstract class Actor extends DomainEntity{
 		this.phone = phone;
 	}
 	
-	@Size(min = 3)
 	@Valid
 	@OneToMany
+	@Size(min = 3)
 	public Collection<Folder> getFolder() {
 		return folder;
 	}

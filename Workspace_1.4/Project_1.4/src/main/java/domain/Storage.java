@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Storage extends DomainEntity{
-	public Integer units;
+	private Integer units;
 	private WareHouse wareHouse;
 	private Item item;
 	

@@ -18,11 +18,11 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Order extends DomainEntity{
-	public String ticker;
-	public Date placementMoment;
-	public String address;
-	public Date deliveryMoment;
-	public Date cancelMoment;
+	private String ticker;
+	private Date placementMoment;
+	private String address;
+	private Date deliveryMoment;
+	private Date cancelMoment;
 	private CreditCard creditCard;
 	private Clerk clerk;
 	private Collection<OrderItem> orderItem;

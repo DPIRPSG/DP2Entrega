@@ -1,4 +1,4 @@
-package domain;
+ package domain;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -11,7 +11,7 @@ import javax.validation.constraints.Min;
 @Access(AccessType.PROPERTY)
 public class Content extends DomainEntity{
 
-	public int units;
+	private int units;
 	private Item item;
 	private ShoppingCart shoppingCart;
 	

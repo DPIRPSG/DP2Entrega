@@ -13,7 +13,7 @@ import javax.validation.Valid;
 @Entity
 @Access(AccessType.PROPERTY)
 public class ShoppingCart extends DomainEntity{
-	public Collection<String> comment;
+	private Collection<String> comment;
 	private Consumer consumer;
 	private Collection<Content> content;
 	

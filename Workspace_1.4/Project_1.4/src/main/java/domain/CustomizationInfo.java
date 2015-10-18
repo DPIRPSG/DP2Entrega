@@ -11,10 +11,10 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class CustomizationInfo extends DomainEntity{
 
-	public String name;
-	public String description;
-	public String logo;
-	public String welcomeMessage;
+	private String name;
+	private String description;
+	private String logo;
+	private String welcomeMessage;
 	
 	@NotBlank
 	public String getName() {

@@ -10,13 +10,14 @@ import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class CreditCard extends DomainEntity{
-	public String holderName;
-	public String brandName;
-	public String number;
-	public int expirationMonth;
-	public int expirationYear;
-	public int cvvCode;
+//No extiende de DomainEntity al ser dataType
+public class CreditCard{
+	private String holderName;
+	private String brandName;
+	private String number;
+	private int expirationMonth;
+	private int expirationYear;
+	private int cvvCode;
 	
 	@NotBlank
 	public String getHolderName() {

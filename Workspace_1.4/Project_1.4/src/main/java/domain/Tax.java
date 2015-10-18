@@ -11,8 +11,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Tax extends DomainEntity{
-	public String name;
-	public double value;
+	private String name;
+	private double value;
 	
 	@NotBlank
 	public String getName() {
