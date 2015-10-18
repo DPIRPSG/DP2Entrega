@@ -2,8 +2,6 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 public class Consumer extends Actor {
@@ -12,7 +10,6 @@ public class Consumer extends Actor {
 	private Collection<Order> order;
 	
 	@Valid
-	@OneToOne(optional = true)
 	public ShoppingCart getShoppingCart() {
 		return shoppingCart;
 	}
@@ -21,7 +18,6 @@ public class Consumer extends Actor {
 	}
 	
 	@Valid
-	@OneToMany
 	public Collection<Order> getOrder() {
 		return order;
 	}

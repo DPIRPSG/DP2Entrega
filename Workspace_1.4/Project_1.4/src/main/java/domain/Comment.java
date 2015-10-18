@@ -1,6 +1,5 @@
 package domain;
 
-import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -46,7 +45,6 @@ public class Comment extends DomainEntity{
 		this.rating = rating;
 	}
 	
-	@ManyToOne(optional = false)
 	@Valid
 	public Item getItem() {
 		return item;
