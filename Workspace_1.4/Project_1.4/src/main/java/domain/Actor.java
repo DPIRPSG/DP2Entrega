@@ -18,7 +18,7 @@ public abstract class Actor extends DomainEntity{
 	private String name;
 	private String surname;
 	private String email;
-	private String[] phone;
+	private String phone;
 	private Collection<Folder> folder;
 	private Collection<Message> sent;
 	private Collection<Message> received;
@@ -50,10 +50,10 @@ public abstract class Actor extends DomainEntity{
 	}
 	
 	@Pattern(regexp = "^(\\+?\\d{1,3}?[- .]?)?\\(?(?:\\d{2,3})\\)?[- .]?\\d\\d\\d[- .]?\\d\\d\\d\\d$")
-	public String[] getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(String[] phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	

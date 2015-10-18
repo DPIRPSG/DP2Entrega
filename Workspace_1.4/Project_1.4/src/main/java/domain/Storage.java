@@ -3,19 +3,18 @@ package domain;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 public class Storage extends DomainEntity{
-	private Integer units;
+	private int units;
 	private WareHouse wareHouse;
 	private Item item;
 	
-	@NotNull
+	//NotNull
 	@Min(1)
-	public Integer getUnits() {
+	public int getUnits() {
 		return units;
 	}
-	public void setUnits(Integer units) {
+	public void setUnits(int units) {
 		this.units = units;
 	}
 	
