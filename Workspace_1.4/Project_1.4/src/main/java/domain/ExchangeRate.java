@@ -1,16 +1,11 @@
 package domain;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class ExchangeRate extends DomainEntity{
 	private String name;
 	private String currency;
