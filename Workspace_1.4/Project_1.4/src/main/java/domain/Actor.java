@@ -2,10 +2,7 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
-import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
@@ -16,14 +13,12 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public abstract class Actor extends DomainEntity{
 
-	public String name;
-	public String surname;
-	public String email;
-	public String[] phone;
+	private String name;
+	private String surname;
+	private String email;
+	private String phone;
 	private Collection<Folder> folder;
 	private Collection<Message> sent;
 	private Collection<Message> received;
@@ -55,16 +50,16 @@ public abstract class Actor extends DomainEntity{
 	}
 	
 	@Pattern(regexp = "^(\\+?\\d{1,3}?[- .]?)?\\(?(?:\\d{2,3})\\)?[- .]?\\d\\d\\d[- .]?\\d\\d\\d\\d$")
-	public String[] getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(String[] phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	
-	@Size(min = 3)
 	@Valid
 	@OneToMany
+	@Size(min = 3)
 	public Collection<Folder> getFolder() {
 		return folder;
 	}

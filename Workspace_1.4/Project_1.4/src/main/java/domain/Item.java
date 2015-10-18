@@ -2,11 +2,8 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -18,16 +15,14 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class Item extends DomainEntity{
-	public String sku;
-	public String name;
-	public String description;
-	public double price;
-	public Collection<String> tags;
-	public String picture;
-	public boolean deleted;
+	private String sku;
+	private String name;
+	private String description;
+	private double price;
+	private Collection<String> tags;
+	private String picture;
+	private boolean deleted;
 	private Category category;
 	private Collection<Comment> comment;
 	private Collection<Storage> storage;

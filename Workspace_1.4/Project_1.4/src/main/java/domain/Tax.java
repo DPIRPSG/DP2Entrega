@@ -1,18 +1,13 @@
 package domain;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class Tax extends DomainEntity{
-	public String name;
-	public double value;
+	private String name;
+	private double value;
 	
 	@NotBlank
 	public String getName() {

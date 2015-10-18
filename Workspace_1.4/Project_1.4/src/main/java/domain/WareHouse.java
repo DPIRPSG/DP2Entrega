@@ -2,20 +2,15 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class WareHouse extends DomainEntity{
 
-	public String name;
-	public String address;
+	private String name;
+	private String address;
 	private Collection<Storage> storage;
 	
 	@NotBlank

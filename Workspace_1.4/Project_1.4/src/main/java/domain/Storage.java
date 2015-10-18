@@ -1,26 +1,20 @@
 package domain;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class Storage extends DomainEntity{
-	public Integer units;
+	private int units;
 	private WareHouse wareHouse;
 	private Item item;
 	
-	@NotNull
+	//NotNull
 	@Min(1)
-	public Integer getUnits() {
+	public int getUnits() {
 		return units;
 	}
-	public void setUnits(Integer units) {
+	public void setUnits(int units) {
 		this.units = units;
 	}
 	

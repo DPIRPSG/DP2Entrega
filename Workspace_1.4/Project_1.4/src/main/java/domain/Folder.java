@@ -10,8 +10,8 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Folder extends DomainEntity{
 
-	public String name;
-	public boolean isSystem;
+	private String name;
+	private boolean isSystem;
 	private Actor actor;
 	private Collection<Message> message;
 	
@@ -40,8 +40,8 @@ public class Folder extends DomainEntity{
 		this.actor = actor;
 	}
 	
-	@ManyToMany
 	@Valid
+	@ManyToMany
 	public Collection<Message> getMessage() {
 		return message;
 	}

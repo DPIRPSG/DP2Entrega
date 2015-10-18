@@ -2,11 +2,9 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
+
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
@@ -15,19 +13,17 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class OrderItem extends DomainEntity{
-	public String sku;
-	public String name;
-	public String description;
-	public double price;
-	public Collection<String> tags;
-	public String picture;
-	public boolean deleted;
-	public double tax;
-	public String nameCategory;
-	public int units;
+	private String sku;
+	private String name;
+	private String description;
+	private double price;
+	private Collection<String> tags;
+	private String picture;
+	private boolean deleted;
+	private double tax;
+	private String nameCategory;
+	private int units;
 	private Order order;
 	
 	@NotBlank

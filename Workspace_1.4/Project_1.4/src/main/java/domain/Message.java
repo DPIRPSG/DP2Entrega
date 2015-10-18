@@ -12,9 +12,9 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Message extends DomainEntity{
-	public String subject;
-	public String body;
-	public Date moment;
+	private String subject;
+	private String body;
+	private Date moment;
 	private Actor sender;
 	private Collection<Actor> recipient;
 	

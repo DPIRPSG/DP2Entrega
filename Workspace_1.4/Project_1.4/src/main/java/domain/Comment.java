@@ -1,21 +1,16 @@
 package domain;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class Comment extends DomainEntity{
-	public String userName;
-	public String title;
-	public String text;
-	public int rating;
+	private String userName;
+	private String title;
+	private String text;
+	private int rating;
 	private Item item;
 	
 	@NotBlank
