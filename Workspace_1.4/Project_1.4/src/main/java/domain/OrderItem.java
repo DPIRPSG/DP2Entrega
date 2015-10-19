@@ -2,10 +2,8 @@ package domain;
 
 import java.util.Collection;
 
-
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
@@ -119,7 +117,6 @@ public class OrderItem extends DomainEntity{
 		this.units = units;
 	}
 	
-	@ManyToOne(optional = false)
 	public Order getOrder() {
 		return order;
 	}

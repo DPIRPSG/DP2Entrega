@@ -2,7 +2,6 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -30,7 +29,6 @@ public class WareHouse extends DomainEntity{
 	}
 	
 	@Valid
-	@OneToMany
 	public Collection<Storage> getStorage() {
 		return storage;
 	}
