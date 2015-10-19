@@ -10,6 +10,8 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
+import security.UserAccount;
+
 public abstract class Actor extends DomainEntity{
 
 	private String name;
