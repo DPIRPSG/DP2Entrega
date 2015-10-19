@@ -1,6 +1,5 @@
 package domain;
 
-import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
@@ -19,7 +18,6 @@ public class Storage extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToOne(optional = false)
 	public WareHouse getWareHouse() {
 		return wareHouse;
 	}
@@ -28,7 +26,6 @@ public class Storage extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToOne(optional = false)
 	public Item getItem() {
 		return item;
 	}

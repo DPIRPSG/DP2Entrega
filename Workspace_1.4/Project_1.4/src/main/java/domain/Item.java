@@ -4,8 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
@@ -93,7 +91,6 @@ public class Item extends DomainEntity{
 		this.deleted = deleted;
 	}
 	
-	@ManyToOne(optional = false)
 	@Valid
 	public Category getCategory() {
 		return category;
@@ -102,7 +99,6 @@ public class Item extends DomainEntity{
 		this.category = category;
 	}
 	
-	@OneToMany
 	@Valid
 	public Collection<Comment> getComment() {
 		return comment;
@@ -111,7 +107,6 @@ public class Item extends DomainEntity{
 		this.comment = comment;
 	}
 	
-	@OneToMany
 	@NotNull
 	@Valid
 	public Collection<Storage> getStorage() {
