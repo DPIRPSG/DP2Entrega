@@ -1,7 +1,6 @@
 package domain;
 
 
-import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -30,6 +29,7 @@ public class Category extends DomainEntity{
 	}
 	
 	@URL
+	@Valid
 	public String getPicture() {
 		return picture;
 	}
@@ -38,7 +38,6 @@ public class Category extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToOne(optional = false)
 	public Tax getTax() {
 		return tax;
 	}

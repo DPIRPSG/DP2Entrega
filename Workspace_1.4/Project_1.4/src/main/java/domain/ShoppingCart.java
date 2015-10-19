@@ -3,8 +3,6 @@ package domain;
 import java.util.Collection;
 
 import javax.persistence.ElementCollection;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 public class ShoppingCart extends DomainEntity{
@@ -27,7 +25,6 @@ public class ShoppingCart extends DomainEntity{
 	}
 	
 	@Valid
-	@OneToOne(optional = false)
 	public Consumer getConsumer() {
 		return consumer;
 	}
@@ -36,7 +33,6 @@ public class ShoppingCart extends DomainEntity{
 	}
 	
 	@Valid
-	@OneToMany
 	public Collection<Content> getContent() {
 		return content;
 	}

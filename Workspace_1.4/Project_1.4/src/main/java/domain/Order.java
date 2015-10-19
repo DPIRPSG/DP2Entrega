@@ -1,11 +1,9 @@
 package domain;
 
-import java.util.Date;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -26,6 +24,7 @@ public class Order extends DomainEntity{
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "^\\d{6}\\-\\w{4}$")
+	@Valid
 	public String getTicker() {
 		return ticker;
 	}
@@ -64,7 +63,6 @@ public class Order extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToOne(optional = false)
 	public CreditCard getCreditCard() {
 		return creditCard;
 	}
@@ -72,7 +70,7 @@ public class Order extends DomainEntity{
 		this.creditCard = creditCard;
 	}
 	
-	@ManyToOne(optional = true)
+	@Valid
 	public Clerk getClerk() {
 		return clerk;
 	}
@@ -80,7 +78,7 @@ public class Order extends DomainEntity{
 		this.clerk = clerk;
 	}
 	
-	@OneToMany
+	@Valid
 	public Collection<OrderItem> getOrderItem() {
 		return orderItem;
 	}
@@ -88,7 +86,7 @@ public class Order extends DomainEntity{
 		this.orderItem = orderItem;
 	}
 	
-	@ManyToOne(optional = false)
+	@Valid
 	public Consumer getConsumer() {
 		return consumer;
 	}

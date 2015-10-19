@@ -1,5 +1,6 @@
 package domain;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 
@@ -20,6 +21,7 @@ public class Tax extends DomainEntity{
 	//Al ser primitivo no necesita ser @NotNull
 	@Min(0)
 	@Digits(integer=3, fraction=2)
+	@Valid
 	public double getValue() {
 		return value;
 	}

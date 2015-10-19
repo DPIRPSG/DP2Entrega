@@ -1,5 +1,6 @@
 package domain;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -21,6 +22,7 @@ public class ExchangeRate extends DomainEntity{
 	
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}$")
+	@Valid
 	public String getCurrency() {
 		return currency;
 	}
@@ -30,6 +32,7 @@ public class ExchangeRate extends DomainEntity{
 	
 	@NotNull
 	@Min(0)
+	@Valid
 	public Double getRate() {
 		return rate;
 	}
