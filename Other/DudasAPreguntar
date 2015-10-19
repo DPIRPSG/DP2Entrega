@@ -1,0 +1,8 @@
++_+ Relación entre Consumer - ShoppingCart - Order
++_+ Administrator unido a Clrek y a Consumer
++_+ Deleted en Item
++_+ Not authenticated (NOP)
++_+ Verbo Manage entre Consumer y ShoppingCart
++_+ Taxes con Items ó categorías
++_+ Permisos a todos los profesores para projetsii
++_+ multiplicidad Order -> OrderedItem
