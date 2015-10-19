@@ -28,6 +28,7 @@ public class Item extends DomainEntity{
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp="^\\w{2}\\-\\w{4}$")
+	@Valid
 	public String getSku() {
 		return sku;
 	}
@@ -54,6 +55,7 @@ public class Item extends DomainEntity{
 	//@NotNull
 	@Min(0)
 	@Digits(integer=9, fraction=2)
+	@Valid
 	public double getPrice() {
 		return price;
 	}
@@ -76,6 +78,7 @@ public class Item extends DomainEntity{
 	}
 	
 	@URL
+	@Valid
 	public String getPicture() {
 		return picture;
 	}

@@ -24,6 +24,7 @@ public class Order extends DomainEntity{
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "^\\d{6}\\-\\w{4}$")
+	@Valid
 	public String getTicker() {
 		return ticker;
 	}
@@ -69,6 +70,7 @@ public class Order extends DomainEntity{
 		this.creditCard = creditCard;
 	}
 	
+	@Valid
 	public Clerk getClerk() {
 		return clerk;
 	}
@@ -76,6 +78,7 @@ public class Order extends DomainEntity{
 		this.clerk = clerk;
 	}
 	
+	@Valid
 	public Collection<OrderItem> getOrderItem() {
 		return orderItem;
 	}
@@ -83,6 +86,7 @@ public class Order extends DomainEntity{
 		this.orderItem = orderItem;
 	}
 	
+	@Valid
 	public Consumer getConsumer() {
 		return consumer;
 	}

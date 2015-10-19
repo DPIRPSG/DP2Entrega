@@ -29,6 +29,7 @@ public class Category extends DomainEntity{
 	}
 	
 	@URL
+	@Valid
 	public String getPicture() {
 		return picture;
 	}

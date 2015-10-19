@@ -10,6 +10,7 @@ public class Storage extends DomainEntity{
 	
 	//NotNull
 	@Min(1)
+	@Valid
 	public int getUnits() {
 		return units;
 	}

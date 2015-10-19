@@ -39,6 +39,7 @@ public abstract class Actor extends DomainEntity{
 	
 	@Email
 	@NotBlank
+	@Valid
 	public String getEmail() {
 		return email;
 	}
@@ -47,6 +48,7 @@ public abstract class Actor extends DomainEntity{
 	}
 	
 	@Pattern(regexp = "^(\\+?\\d{1,3}?[- .]?)?\\(?(?:\\d{2,3})\\)?[- .]?\\d\\d\\d[- .]?\\d\\d\\d\\d$")
+	@Valid
 	public String getPhone() {
 		return phone;
 	}

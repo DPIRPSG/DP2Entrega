@@ -1,5 +1,7 @@
 package domain;
 
+import javax.validation.Valid;
+
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
@@ -31,6 +33,7 @@ public class CreditCard{
 	
 	@NotBlank
 	@CreditCardNumber
+	@Valid
 	public String getNumber() {
 		return number;
 	}
@@ -40,6 +43,7 @@ public class CreditCard{
 	
 	//NotNull
 	@Range(min = 1, max = 12)
+	@Valid
 	public int getExpirationMonth() {
 		return expirationMonth;
 	}
@@ -57,6 +61,7 @@ public class CreditCard{
 	
 	//NotNull
 	@Range(min = 100, max = 999)
+	@Valid
 	public int getCvvCode() {
 		return cvvCode;
 	}

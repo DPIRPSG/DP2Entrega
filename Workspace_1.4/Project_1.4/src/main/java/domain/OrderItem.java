@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
@@ -27,6 +28,7 @@ public class OrderItem extends DomainEntity{
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp="^\\w{2}\\-\\w{4}$")
+	@Valid
 	public String getSku() {
 		return sku;
 	}
@@ -53,6 +55,7 @@ public class OrderItem extends DomainEntity{
 	//@NotNull
 	@Min(0)
 	@Digits(integer=9, fraction=2)
+	@Valid
 	public double getPrice() {
 		return price;
 	}
@@ -75,6 +78,7 @@ public class OrderItem extends DomainEntity{
 	}
 	
 	@URL
+	@Valid
 	public String getPicture() {
 		return picture;
 	}
@@ -93,6 +97,7 @@ public class OrderItem extends DomainEntity{
 	//NotNull
 	@Min(0)
 	@Digits(integer = 3, fraction = 2)
+	@Valid
 	public double getTax() {
 		return tax;
 	}
@@ -110,6 +115,7 @@ public class OrderItem extends DomainEntity{
 	
 	//NotNull
 	@Min(1)
+	@Valid
 	public int getUnits() {
 		return units;
 	}
