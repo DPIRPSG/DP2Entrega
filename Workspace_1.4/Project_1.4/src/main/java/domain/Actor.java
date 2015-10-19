@@ -2,9 +2,6 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -42,6 +39,7 @@ public abstract class Actor extends DomainEntity{
 	
 	@Email
 	@NotBlank
+	@Valid
 	public String getEmail() {
 		return email;
 	}
@@ -50,6 +48,7 @@ public abstract class Actor extends DomainEntity{
 	}
 	
 	@Pattern(regexp = "^(\\+?\\d{1,3}?[- .]?)?\\(?(?:\\d{2,3})\\)?[- .]?\\d\\d\\d[- .]?\\d\\d\\d\\d$")
+	@Valid
 	public String getPhone() {
 		return phone;
 	}
@@ -58,7 +57,6 @@ public abstract class Actor extends DomainEntity{
 	}
 	
 	@Valid
-	@OneToMany
 	@Size(min = 3)
 	public Collection<Folder> getFolder() {
 		return folder;
@@ -68,7 +66,6 @@ public abstract class Actor extends DomainEntity{
 	}
 	
 	@Valid
-	@OneToMany(mappedBy = "sender")
 	public Collection<Message> getSent() {
 		return sent;
 	}
@@ -77,7 +74,6 @@ public abstract class Actor extends DomainEntity{
 	}
 	
 	@Valid
-	@OneToMany(mappedBy = "recipient")
 	public Collection<Message> getReceived() {
 		return received;
 	}
@@ -87,7 +83,6 @@ public abstract class Actor extends DomainEntity{
 	
 	@NotNull
 	@Valid
-	@OneToOne(cascade = CascadeType.ALL, optional = false)
 	public UserAccount getUserAccount() {
 		return userAccount;
 	}

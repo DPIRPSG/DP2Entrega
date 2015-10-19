@@ -2,8 +2,6 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -32,7 +30,6 @@ public class Folder extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToOne(optional = false)
 	public Actor getActor() {
 		return actor;
 	}
@@ -41,7 +38,6 @@ public class Folder extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToMany
 	public Collection<Message> getMessage() {
 		return message;
 	}

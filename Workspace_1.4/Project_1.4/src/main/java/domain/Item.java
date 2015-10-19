@@ -4,8 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
@@ -30,6 +28,7 @@ public class Item extends DomainEntity{
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp="^\\w{2}\\-\\w{4}$")
+	@Valid
 	public String getSku() {
 		return sku;
 	}
@@ -56,6 +55,7 @@ public class Item extends DomainEntity{
 	//@NotNull
 	@Min(0)
 	@Digits(integer=9, fraction=2)
+	@Valid
 	public double getPrice() {
 		return price;
 	}
@@ -78,6 +78,7 @@ public class Item extends DomainEntity{
 	}
 	
 	@URL
+	@Valid
 	public String getPicture() {
 		return picture;
 	}
@@ -93,7 +94,6 @@ public class Item extends DomainEntity{
 		this.deleted = deleted;
 	}
 	
-	@ManyToOne(optional = false)
 	@Valid
 	public Category getCategory() {
 		return category;
@@ -102,7 +102,6 @@ public class Item extends DomainEntity{
 		this.category = category;
 	}
 	
-	@OneToMany
 	@Valid
 	public Collection<Comment> getComment() {
 		return comment;
@@ -111,7 +110,6 @@ public class Item extends DomainEntity{
 		this.comment = comment;
 	}
 	
-	@OneToMany
 	@NotNull
 	@Valid
 	public Collection<Storage> getStorage() {

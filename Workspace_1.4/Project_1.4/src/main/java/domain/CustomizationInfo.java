@@ -1,5 +1,7 @@
 package domain;
 
+import javax.validation.Valid;
+
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
@@ -28,6 +30,7 @@ public class CustomizationInfo extends DomainEntity{
 	
 	@NotBlank
 	@URL
+	@Valid
 	public String getLogo() {
 		return logo;
 	}
