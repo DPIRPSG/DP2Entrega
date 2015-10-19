@@ -1,13 +1,3 @@
-/* Authority.java
- *
- * Copyright (C) 2014 Universidad de Sevilla
- * 
- * The use of this project is hereby constrained to the conditions of the 
- * TDG Licence, a copy of which you may download from 
- * http://www.tdg-seville.info/License.html
- * 
- */
-
 package security;
 
 import java.util.ArrayList;
@@ -36,14 +26,15 @@ public class Authority implements GrantedAuthority {
 	// Values -----------------------------------------------------------------
 
 	public static final String ADMIN = "ADMIN";
-	public static final String CUSTOMER = "CUSTOMER";
+	public static final String CONSUMER = "CONSUMER";
+	public static final String CLERK = "CLERK";
 
 	// Attributes -------------------------------------------------------------
 
 	private String authority;
 
 	@NotBlank
-	@Pattern(regexp = "^" + ADMIN + "|" + CUSTOMER + "$")
+	@Pattern(regexp = "^" + ADMIN + "|" + CONSUMER + "|" + CLERK + "$")
 	@Override
 	public String getAuthority() {
 		return authority;
@@ -64,7 +55,11 @@ public class Authority implements GrantedAuthority {
 		result.add(authority);
 
 		authority = new Authority();
-		authority.setAuthority(CUSTOMER);
+		authority.setAuthority(CONSUMER);
+		result.add(authority);
+		
+		authority = new Authority();
+		authority.setAuthority(CLERK);
 		result.add(authority);
 
 		return result;
@@ -88,7 +83,8 @@ public class Authority implements GrantedAuthority {
 		else if (!this.getClass().isInstance(other))
 			result = false;
 		else
-			result = (this.getAuthority().equals(((Authority) other).getAuthority()));
+			result = (this.getAuthority().equals(((Authority) other)
+					.getAuthority()));
 
 		return result;
 	}
